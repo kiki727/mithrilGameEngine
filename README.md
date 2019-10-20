@@ -3,7 +3,7 @@
 
 Main idea is to use master component,
 and to run loop in it.<br/>
-Mithril.js use **requestAnimationframe** for redraw...
+Mithril.js use **requestAnimationframe** to run redraw...
 
 ``` javasript
 function MasterComponent(){
