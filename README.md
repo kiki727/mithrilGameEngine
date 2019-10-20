@@ -12,7 +12,7 @@ function MasterComponent(){
       },
       view:(vnode)=>{
         return m("div.master",{
-          onclick:(e)={ console.log("loop") }
+          onclick:(e)=>{ console.log("loop") }
          },
          [
           Game Objects ...
