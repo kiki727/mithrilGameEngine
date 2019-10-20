@@ -24,7 +24,7 @@ I use css to run sprites.
 
 I find that most perfomant expensive operation is to remove "dead" nodes.
 
-I build code on fly, try to not optimize nothing, and i write code 
+I build code on fly, try to not optimize nothing, and i write code__ 
  sloppy(to simulate som load,and bad optimization)... I get average 60fps.
 
 Just download code, and run in browser to see performance...
