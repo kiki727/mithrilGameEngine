@@ -2,8 +2,8 @@
 ### Mithril as game engine experiment
 
 Main idea is to use master component,
-and to run loop in it.
-Mithrij.js use **requestAnimationframe** for redraw...
+and to run loop in it.<br/>
+Mithril.js use **requestAnimationframe** for redraw...
 
 ``` javasript
 function MasterComponent(){
