@@ -11,8 +11,8 @@ function MasterComponent(){
         vnode.dom.onclick();// loop
       },
       view:(vnode)=>{
-        return m("div",{
-          onclick:(e)={ onsole.log("loop") }
+        return m("div.master",{
+          onclick:(e)={ console.log("loop") }
          },
          [
           Game Objects ...
