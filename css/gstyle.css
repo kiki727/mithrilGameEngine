@@ -1,0 +1,310 @@
+/* GLOBALS VARS */
+:root {
+    --w: 600px;
+    --h: 600px;
+}
+
+
+
+@font-face{
+    font-family: digital;
+    src: url(fonts/digitalregular.ttf)
+}
+
+@font-face{
+    font-family: digitalbold;
+    src: url(fonts/digitalbold.ttf)
+}
+
+html {
+    box-sizing: border-box!important
+}
+
+*, *:before, *:after {
+    box-sizing: inherit
+}
+
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0
+}
+
+.m-container, .m-panel {
+    padding: 0.01em 16px
+}
+
+.wrapper {
+    margin-top: 10px;
+    margin-right: auto;
+    /* 1 */
+    margin-left: auto;
+    /* 1 */
+    max-width: 960px;
+    /* 2 */
+    padding-right: 10px;
+    /* 3 */
+    padding-left: 10px;
+    /* 3 */
+}
+
+.center {
+    margin: 0 auto!important;
+}
+
+.hide {
+    display: none!important
+}
+
+button {
+    background: #a55;
+    border: 3px solid #a55;
+    color: #fff;
+    height: auto;
+    text-decoration: none;
+    display: inline-block;
+    padding: 4px 18px;
+    vertical-align: middle
+}
+
+/* game properties-stiles */
+
+#game-container {
+    position: relative;
+    box-sizing: border-box;
+    padding: 0px;
+    border: 1px solid red;
+    background-color: inherit;
+    overflow: hidden;
+    color: inherit;
+    z-index: 0;
+    width: var(--w);
+    height: var(--h);
+    margin: 0 auto!important;
+}
+
+/* global layer style */
+
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: var(--w);
+    height: var(--h);
+}
+
+/* layer to render game objects */
+
+.obj-layer {
+    background: transparent!important;
+    z-index: 10;
+}
+
+.anim-opacity {
+    animation: opac 0.8s
+}
+
+@keyframes opac {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+/* USER TO DEFINE LAYERS prop
+=====================================================*/
+
+/* define layers (space):
+from z-index 1   to z-index 8 ... 
+*/
+
+.layer-1 {
+    background-image: url(../img/bg2.jpg);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    z-index: 1;
+}
+
+.layer-2 {
+    background-image: url(../img/bg.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    z-index: 2;
+    animation: pulse 21s infinite;
+}
+
+.layer-info {
+    font-family: digital;
+    font-size: 16px;
+    color: greenyellow;
+    background: transparent!important;
+    z-index: 5;
+}
+
+.layer-objects {
+    background: transparent!important;
+    z-index: 4;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1
+    }
+    10% {
+        opacity: .4
+    }
+    15% {
+        opacity: .8
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* objects 
+==============================   */
+.asteroid-1 {
+    border:1px solid yellowgreen;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    background-image: url('../img/asteroid-1-3.png');
+    background-position: 0 0;
+    animation: asteroid1 .8s steps(21) infinite
+  }
+
+  @keyframes asteroid1 {
+    from{background-position-x: 0px;}
+    to{background-position-x:-1512px;}
+  }
+
+  .asteroid-2{
+    border:1px solid yellowgreen;
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      background-image: url('../img/asteroid-2.png');
+      background-position: 0 0;
+    /*  animation:  orbit 45s cubic-bezier(.4,.28,.58,.72) infinite  */
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Ships 
+=============================   */
+.enemy-ship{
+    border:1px solid yellowgreen;
+    width: 50px;
+    height: 62px;
+    position: absolute;
+    background-image: url('../img/enemy.png');
+    background-position: 0 0;
+    animation: enemyship 1s steps(5) infinite;
+  }
+
+  @keyframes enemyship{
+    from {
+      background-position-x: 0px;
+    }
+    to {
+      background-position-x: -250px;
+    }
+  }
+
+  .enemy-explosion {
+    border:1px solid yellowgreen;
+    width: 50px;
+    height: 62px;
+    position: absolute;
+    background-image: url('../img/enemy.png');
+    background-position: -200px 62px;
+    animation: enemyexplosion .7s steps(5);
+  }
+
+  @keyframes enemyexplosion{
+    from {
+      background-position-x: 0px;
+    }
+    to {
+      background-position-x: -250px;
+    }
+  }
+
+  .ship {
+    border:1px solid yellowgreen;
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    background-image: url('../img/ship.png');
+    background-position: 0 0;
+    animation: ship .8s steps(7) infinite;
+  }
+
+  @keyframes ship{
+    from {
+      background-position-x: 0px;
+    }
+    to {
+      background-position-x: -280px;
+    }
+  }
+
+  .ship-explosion{
+    border:1px solid yellowgreen;
+    width: 40px;
+    height: 50px;
+    position: absolute;
+    background-image: url('../img/ship.png');
+    background-position: -200px 50px;
+    animation: shipexplosion .8s steps(6);
+  }
+
+  @keyframes shipexplosion{
+    from {
+      background-position-x: 0px;
+    }
+    to {
+      background-position-x: -250px;
+    }
+  }
+/*
+lasers 
+=====================================   */
+.enemy-laser {
+  width: 2px;
+  height: 15px;
+  position: absolute;
+  background-image: url(../img/laser-red.jpg);
+  box-shadow: 0 -2px 3px 2px #FFA07A
+}
+
+.friend-laser {
+  width: 2px;
+  height: 15px;
+  position: absolute;
+  background-image: url(../img/laser-green.jpg);
+  box-shadow: 0 -2px 3px 1px yellowgreen;
+}
+  /* dead ships 
+  =========================  */
+  .empty {
+    width: 0px!important;
+    height: 0px!important;
+  }
+
+  .
