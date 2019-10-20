@@ -17,7 +17,9 @@ function MasterComponent(){
          [
           Game Objects ...
          ])
-}
+      }
+   }
+ }
 ```
 This is not canvas based engine, but dom based.
 I use css to run sprites.
