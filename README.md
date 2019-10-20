@@ -3,6 +3,7 @@
 
 Main idea is to use master component,
 and to run loop in it.
+Mithrij.js use **requestAnimationframe** for redraw...
 
 ``` javasript
 function MasterComponent(){
@@ -21,7 +22,9 @@ function MasterComponent(){
    }
  }
 ```
+
 This is not canvas based engine, but dom based.
+
 I use css to run sprites.
 
 I find that most perfomant expensive operation is to remove "dead" nodes.
