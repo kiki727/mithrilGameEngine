@@ -35,3 +35,5 @@ sloppy (to simulate som load,and bad optimization)... I get average 60fps.
 Just download code, and run in browser to see performance...
 
 [link to test page](https://kiki727.github.io/mithrilGameEngine/)
+
+<a href="https://kiki727.github.io/mithrilGameEngine/" target="_blank">Link in new tab!</a>
